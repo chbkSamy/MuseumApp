@@ -1,0 +1,20 @@
+.paintingDisplay {
+    display: flex;
+    flex-direction: column;
+}
+
+  @media (max-width: 768px) {
+    .paintingDisplay {
+      width: 40%;
+    }
+  }
+
+  .paintingDisplay img {
+    width: 100%;
+   ;
+
+  }
+
+  .paintingDisplay p {
+    font-size: 1.2rem;
+  }

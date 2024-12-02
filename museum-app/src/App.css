@@ -41,9 +41,4 @@
   color: #888;
 }
 
-.PaintingDisplay {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 50%;
-}
+
