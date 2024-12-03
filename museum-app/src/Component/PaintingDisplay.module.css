@@ -1,58 +1,55 @@
 .paintingDisplay {
-  display: flex wrap;
+  display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
+
 @media (max-width: 768px) {
-  .paintingDisplay {
-    width: 40%;
+  .paintingDisplay .image {
+    flex-basis: 48%; /* Sur les écrans plus petits (tablettes), chaque image prend 48% de la largeur, soit 2 colonnes */
   }
+
+  .landscape img {
+    width: 200px; /* Taille des images paysage */
+  }
+
+  .portrait img {
+    width: 100px; /* Taille des images portrait */
+  }
+
   .paintingDisplay img {
-    width: 175%;
+    width: 100%; /* Les images prennent toute la largeur de leur conteneur */
   }
+
   .paintingDisplay h3 {
-    font-size: 0.6rem;
+    font-size: 0.6rem; /* Petite taille de police pour les titres */
     margin-bottom: 0.2rem;
   }
+
   .paintingDisplay p {
-    font-size: 0.45rem;
+    font-size: 0.45rem; /* Petite taille de police pour les descriptions */
     margin-top: 0.1rem;
   }
 }
 
+@media (min-width: 769px) {
+  .paintingDisplay .image {
+    flex-basis: 22%;
+  }
 
-@media (min-width: 769px)  {
   .paintingDisplay img {
     width: 80%;
   }
-
-}
-.landscape image {
-  /* width: 80%; */
-  margin-bottom: 10px;
 }
 
-.portrait image {
-  /* width: 80%; */
-  margin-bottom: 10px;
-}
 
-.paintingDisplay h3 {
-  margin-bottom: 5px;
-}
-
-.paintingDisplay p {
-  margin-top: 0;
-  /* font-size: 1.2rem; */
-}
-.portrait .image {
+.portrait  {
   border: 3px solid blue;
-  width: 80%;
+  width: 40%;
 }
 
-.landscape .image {
+.landscape  {
   border: 3px solid green;
-  width: 150%;
+  width: 90%;
 }

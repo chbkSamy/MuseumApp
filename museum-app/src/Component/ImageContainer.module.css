@@ -1,28 +1,26 @@
 .imageContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  justify-items: center;
-  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+
   width: 100%;
+}
+
+.paintingDisplay .image {
+  margin: 10px;
+  flex-basis: 22%;
   box-sizing: border-box;
 }
 
-
-.landscape {
-  grid-column: span 2; 
-  width: 100%;
+@media (max-width: 768px) {
+  .paintingDisplay .image {
+    flex-basis: 48%;
+  }
 }
-
 
 @media (max-width: 480px) {
-  .imageContainer {
-    grid-template-columns: 1fr;
+  .paintingDisplay .image {
+    flex-basis: 100%;
   }
 }
 
-@media (max-width: 768px) {
-  .imageContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+

@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styles from './PaintingDisplay.module.css'; 
+import styles from './PaintingDisplay.module.css';
 
-const PaintingDisplay = ({ image, title, artist }) => {
-  const [orientation, setOrientation] = useState('');
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = image;
-    img.onload = () => {
-      setOrientation(img.width > img.height ? 'landscape' : 'portrait');
-    };
-  }, [image]);
-
+const PaintingDisplay = ({ image, title, artist, isPortrait }) => {
   return (
-    <div className={`${styles.painting} ${styles[orientation]}`}>
+    <div className={`${styles.paintingDisplay} ${isPortrait ? styles.portrait : styles.landscape}`}>
       <img src={image} alt={title} className={styles.image} />
       <h3>{title}</h3>
       <p>{artist}</p>

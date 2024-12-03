@@ -10,6 +10,7 @@ function ImageContainer() {
         image={item.webImage.url}
         title={item.title}
         artist={item.principalOrFirstMaker}
+        isPortrait={item.webImage.width < item.webImage.height}
       />
     );
   });
