@@ -1,20 +1,44 @@
 .paintingDisplay {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-  @media (max-width: 768px) {
-    .paintingDisplay {
-      width: 40%;
-    }
+@media (max-width: 768px) {
+  .paintingDisplay {
+    width: 40%;
   }
-
   .paintingDisplay img {
-    width: 100%;
-   ;
-
+    width: 175%;
   }
-
+  .paintingDisplay h3 {
+    font-size: 0.6rem; 
+    margin-bottom: 0.2rem;
+  }
   .paintingDisplay p {
-    font-size: 1.2rem;
+    font-size: 0.45rem;
+    margin-top: 0.1rem;
   }
+}
+
+
+@media (min-width: 769px)  {
+  .paintingDisplay img {
+    width: 80%;
+  }
+
+}
+.paintingDisplay img {
+  /* width: 80%; */
+  margin-bottom: 10px;
+}
+
+.paintingDisplay h3 {
+  margin-bottom: 5px;
+}
+
+.paintingDisplay p {
+  margin-top: 0;
+  /* font-size: 1.2rem; */
+}

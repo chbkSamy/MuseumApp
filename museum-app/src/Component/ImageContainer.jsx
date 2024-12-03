@@ -7,6 +7,15 @@ function ImageContainer() {
         <PaintingDisplay />
         <PaintingDisplay />
         <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
+        <PaintingDisplay />
         </div>
 
         </>
