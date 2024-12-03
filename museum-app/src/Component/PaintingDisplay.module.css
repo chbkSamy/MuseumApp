@@ -1,5 +1,5 @@
 .paintingDisplay {
-  display: flex;
+  display: flex wrap;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -13,7 +13,7 @@
     width: 175%;
   }
   .paintingDisplay h3 {
-    font-size: 0.6rem; 
+    font-size: 0.6rem;
     margin-bottom: 0.2rem;
   }
   .paintingDisplay p {
@@ -29,7 +29,12 @@
   }
 
 }
-.paintingDisplay img {
+.landscape image {
+  /* width: 80%; */
+  margin-bottom: 10px;
+}
+
+.portrait image {
   /* width: 80%; */
   margin-bottom: 10px;
 }
@@ -41,4 +46,13 @@
 .paintingDisplay p {
   margin-top: 0;
   /* font-size: 1.2rem; */
+}
+.portrait .image {
+  border: 3px solid blue;
+  width: 80%;
+}
+
+.landscape .image {
+  border: 3px solid green;
+  width: 150%;
 }

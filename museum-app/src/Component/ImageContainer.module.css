@@ -1,14 +1,28 @@
 .imageContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.landscape {
+  grid-column: span 2; 
+  width: 100%;
+}
+
+
+@media (max-width: 480px) {
+  .imageContainer {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
   .imageContainer {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    justify-items: center;
   }
 }
-
