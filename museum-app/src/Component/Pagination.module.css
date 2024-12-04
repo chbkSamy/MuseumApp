@@ -58,7 +58,7 @@
 
 /* Responsive Design */
 
-/* Pour les écrans de téléphone */
+
 @media (max-width: 600px) {
   .pagination {
     flex-direction: column;
@@ -81,7 +81,6 @@
   }
 }
 
-/* Pour les écrans moyens (tablettes) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .pagination {
     gap: 8px;
