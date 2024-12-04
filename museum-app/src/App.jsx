@@ -8,9 +8,8 @@ function App() {
   const itemsPerPage = 5;
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');  // état pour la recherche
-  const [filteredData, setFilteredData] = useState(null); // données filtrées
-
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredData, setFilteredData] = useState(null);
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
@@ -21,7 +20,7 @@ function App() {
         );
         const result = await response.json();
         setData(result.artObjects);
-        setFilteredData(result.artObjects); // Initialement, on affiche toutes les données
+        setFilteredData(result.artObjects);
       } catch (error) {
         console.error("Failed to fetch data:", error);
       } finally {
@@ -31,7 +30,7 @@ function App() {
     fetchData();
   }, []);
 
-  // Fonction de gestion de la recherche
+ 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
