@@ -1,39 +1,103 @@
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 15px;
+  background-color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #e0e0e0;
+  border-color: #d3d3d3;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.pagination .page-info {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.pagination .scroll-to-top {
+  padding: 8px 15px;
+  margin: 0 5px;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination .scroll-to-top:hover {
+  background-color: #218838;
+}
+
+.pagination .first-page,
+.pagination .last-page {
+  font-weight: bold;
+}
+
+/* Responsive Design */
+
+/* Pour les écrans de téléphone */
+@media (max-width: 600px) {
+  .pagination {
+    flex-direction: column;
+    gap: 5px;
   }
 
   .pagination button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    background-color: #fff;
-    border: 1px solid #007bff;
-    border-radius: 4px;
-    color: #007bff;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
-  .pagination button:disabled {
-    background-color: #e0e0e0;
-    border-color: #d3d3d3;
-    color: #aaa;
-    cursor: not-allowed;
+  .pagination .page-info {
+    font-size: 12px;
+    margin: 5px 0;
   }
 
-  .pagination button:hover:not(:disabled) {
-    background-color: #f0f0f0;
+  .pagination .scroll-to-top {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Pour les écrans moyens (tablettes) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .pagination {
+    gap: 8px;
   }
 
-  .pagination .active {
-    background-color: #007bff;
-    color: white;
+  .pagination button {
+    font-size: 13px;
+    padding: 7px 12px;
   }
 
-  .pagination button.prev,
-  .pagination button.next {
-    font-weight: bold;
+  .pagination .page-info {
+    font-size: 13px;
   }
+
+  .pagination .scroll-to-top {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+}

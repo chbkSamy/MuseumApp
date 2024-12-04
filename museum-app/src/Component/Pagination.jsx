@@ -14,21 +14,31 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     }
   };
 
-
   const handlePrev = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
     }
   };
 
-
-  const pages = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push(i);
-  }
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="pagination">
+      {/* Première page */}
+      <button
+        className="first-page"
+        onClick={(e) => {
+          e.preventDefault();
+          handlePageChange(1);
+        }}
+        disabled={currentPage === 1}
+      >
+        Première
+      </button>
+
+      {/* Page précédente */}
       <button
         className="prev"
         onClick={(e) => {
@@ -40,29 +50,44 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         &laquo; Précédent
       </button>
 
+      {/* Affichage de la page actuelle */}
+      <span className="page-info">
+        Page {currentPage} sur {totalPages}
+      </span>
 
-      {pages.map((page) => (
-        <button
-          key={page}
-          className={`page-number ${currentPage === page ? 'active' : ''}`}
-          onClick={(e) => {
-            e.preventDefault();
-            handlePageChange(page);
-          }}
-        >
-          {page}
-        </button>
-      ))}
-
+      {/* Page suivante */}
       <button
         className="next"
         onClick={(e) => {
           e.preventDefault();
           handleNext();
         }}
-        disabled={currentPage === totalPages} 
+        disabled={currentPage === totalPages}
       >
         Suivant &raquo;
+      </button>
+
+      {/* Dernière page */}
+      <button
+        className="last-page"
+        onClick={(e) => {
+          e.preventDefault();
+          handlePageChange(totalPages);
+        }}
+        disabled={currentPage === totalPages}
+      >
+        Dernière
+      </button>
+
+      {/* Remonter en haut */}
+      <button
+        className="scroll-to-top"
+        onClick={(e) => {
+          e.preventDefault();
+          handleScrollToTop();
+        }}
+      >
+        ⬆️
       </button>
     </div>
   );
