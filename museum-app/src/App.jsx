@@ -14,10 +14,20 @@ function App() {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        const apikey = import.meta.env.VITE_API_KEY;
-        const response = await fetch(
-          `https://www.rijksmuseum.nl/api/en/collection?key=${apikey}&ps=100`
-        );
+        const apiUrl = '/.netlify/functions/get-collection';
+
+
+        const params = new URLSearchParams({
+          ps: 100
+        });
+
+
+        const response = await fetch(`${apiUrl}?${params.toString()}`);
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
         const result = await response.json();
         setData(result.artObjects);
         setFilteredData(result.artObjects);
@@ -27,10 +37,12 @@ function App() {
         setIsLoading(false);
       }
     };
+
     fetchData();
   }, []);
 
- 
+
+
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
