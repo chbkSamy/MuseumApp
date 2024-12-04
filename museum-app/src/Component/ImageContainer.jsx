@@ -2,11 +2,16 @@ import PaintingDisplay from "./PaintingDisplay";
 import styles from "./ImageContainer.module.css";
 import data from "../infosMockAPI.json";
 
-function ImageContainer() {
-  const paintings = data.artObjects.map((item, index) => {
+function ImageContainer({ currentPage, itemsPerPage }) {
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+
+
+  const paintings = data.artObjects.slice(startIndex, endIndex).map((item, index) => {
     return (
       <PaintingDisplay
-        key={index}
+        key={startIndex + index}
         image={item.webImage.url}
         title={item.title}
         artist={item.principalOrFirstMaker}

@@ -7,28 +7,28 @@
 
 @media (max-width: 768px) {
   .paintingDisplay .image {
-    flex-basis: 48%; /* Sur les écrans plus petits (tablettes), chaque image prend 48% de la largeur, soit 2 colonnes */
+    flex-basis: 48%;
   }
 
   .landscape img {
-    width: 200px; /* Taille des images paysage */
+    width: 200px;
   }
 
   .portrait img {
-    width: 100px; /* Taille des images portrait */
+    width: 100px;
   }
 
   .paintingDisplay img {
-    width: 100%; /* Les images prennent toute la largeur de leur conteneur */
+    width: 100%;
   }
 
   .paintingDisplay h3 {
-    font-size: 0.6rem; /* Petite taille de police pour les titres */
+    font-size: 0.6rem;
     margin-bottom: 0.2rem;
   }
 
   .paintingDisplay p {
-    font-size: 0.45rem; /* Petite taille de police pour les descriptions */
+    font-size: 0.45rem;
     margin-top: 0.1rem;
   }
 }
@@ -42,14 +42,39 @@
     width: 80%;
   }
 }
-
-
-.portrait  {
-  border: 3px solid blue;
+.portrait {
+  border: 3px solid #d3d3d3;
+  border-radius: 8px;
   width: 40%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  background-color: #e0e0e0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.landscape  {
-  border: 3px solid green;
+.landscape {
+  border: 3px solid #d3d3d3;
+  border-radius: 8px;
   width: 90%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  background-color: #e0e0e0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); 
 }
+.paintingDisplay h3 {
+  color: black ;
+}
+.paintingDisplay p {
+  color: black ;
+}
+
+
+
+
+
