@@ -5,7 +5,7 @@ export const handler = async (event, context) => {
           `https://www.rijksmuseum.nl/api/en/collection?key=${apikey}&ps=${param.ps}`
         );
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         return {
           statusCode: 200,
           body: JSON.stringify(result),

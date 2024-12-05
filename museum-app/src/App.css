@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+@font-face {
+  font-family:'Rijksmuseum-Bold' ;
+  src: url('./assets/fonts/Rijksmuseum-Bold.woff2') format('woff2'),;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -41,4 +47,65 @@
   color: #888;
 }
 
+.clear-button {
+  background-color: red;
+  margin-left: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: rijksmuseum-bold;
+  font-size: 18px;
 
+}
+
+.clear-button:hover {
+  background-color: darkred;
+}
+
+.search-button {
+  background-color: blue;
+  margin-left: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: rijksmuseum-bold;
+  font-size: 18px;
+}
+
+.search-button:hover {
+  background-color: darkblue;
+
+}
+
+.search-input {
+  width: 300px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-right: -5px;
+  font-family: rijksmuseum-bold;
+}
+
+.search-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.header {
+  font-family: rijksmuseum-bold;
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .search-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .clear-button{
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

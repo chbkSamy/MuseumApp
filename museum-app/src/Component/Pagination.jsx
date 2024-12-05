@@ -5,18 +5,21 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       onPageChange(page);
+      handleScrollToTop();
     }
   };
 
   const handleNext = () => {
     if (currentPage < totalPages) {
       onPageChange(currentPage + 1);
+      handleScrollToTop();
     }
   };
 
   const handlePrev = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
+      handleScrollToTop();
     }
   };
 
@@ -26,7 +29,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <div className="pagination">
-      {/* Première page */}
+
       <button
         className="first-page"
         onClick={(e) => {
@@ -38,7 +41,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         Première
       </button>
 
-      {/* Page précédente */}
       <button
         className="prev"
         onClick={(e) => {
@@ -50,12 +52,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         &laquo; Précédent
       </button>
 
-      {/* Affichage de la page actuelle */}
       <span className="page-info">
         Page {currentPage} sur {totalPages}
       </span>
 
-      {/* Page suivante */}
       <button
         className="next"
         onClick={(e) => {
@@ -67,7 +67,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         Suivant &raquo;
       </button>
 
-      {/* Dernière page */}
       <button
         className="last-page"
         onClick={(e) => {
@@ -79,7 +78,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         Dernière
       </button>
 
-      {/* Remonter en haut */}
       <button
         className="scroll-to-top"
         onClick={(e) => {

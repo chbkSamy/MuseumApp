@@ -82,16 +82,17 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
-        <h1>Rijksmuseum Collection</h1>
+        <h1>RIJKSMUSEUM</h1>
         <form onSubmit={handleSearchSubmit}>
           <input
+            className='search-input'
             type="text"
             placeholder="Search by title or artist..."
             value={searchQuery}
             onChange={handleSearchChange}
           />
-          <button type="submit">Search</button>
-          <button type="button" onClick={handleClearSearch}>Clear</button>
+          <button className='search-button' type="submit">Search</button>
+          <button className='clear-button' type="button" onClick={handleClearSearch}>Clear</button>
         </form>
       </header>
 

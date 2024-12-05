@@ -2,6 +2,20 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+@font-face {
+  font-family:'Rijksmuseum-Normal' ;
+  src: url('./assets/fonts/Rijksmuseum-Normal.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Rijksmuseum-Bold' ;
+  src: url('./assets/fonts/Rijksmuseum-Bold.woff2') format('woff2'),;
+}
+
+.paintingDisplay:hover {
+  transform: scale(1.02);
 }
 
 
@@ -69,10 +83,15 @@
 }
 .paintingDisplay h3 {
   color: black ;
+  font-family:'Rijksmuseum-Bold' ;
+  font-size: 1.6rem;
 }
 .paintingDisplay p {
   color: black ;
+  font-family:'Rijksmuseum-Normal' ;
+  font-size: 1.2rem;
 }
+
 
 
 
