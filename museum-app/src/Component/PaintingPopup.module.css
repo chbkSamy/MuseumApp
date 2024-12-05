@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+@font-face {
+  font-family:'Rijksmuseum-Bold' ;
+  src: url('./assets/fonts/Rijksmuseum-Bold.woff2') format('woff2'),;
+}
 
 .popupImage {
   width: 100%;
@@ -29,6 +33,34 @@
   color: white;
 }
 
+.PaintingPopup h3 {
+  color: white ;
+  font-family:'Rijksmuseum-Bold' ;
+  font-size: 1.6rem;
+}
+
 .closeButton:hover {
   color: red;
+}
+
+@media (max-width: 768px) {
+  .popupContainer {
+    padding: 10px;
+  }
+
+  .popupImage {
+    max-width: 90%; 
+    max-height: 70vh;
+    border-radius: 6px;
+  }
+
+  .closeButton {
+    font-size: 18px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .PaintingPopup h3 {
+    font-size: 1.2rem;
+  }
 }
