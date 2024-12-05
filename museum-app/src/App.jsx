@@ -10,18 +10,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredData, setFilteredData] = useState(null);
+
+  // Ce useEffect récupère les données de l'API
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
         const apiUrl = '/.netlify/functions/get-collection';
-
-
-        const params = new URLSearchParams({
-          ps: 100
-        });
-
-
+        const params = new URLSearchParams({ ps: 100 });
         const response = await fetch(`${apiUrl}?${params.toString()}`);
 
         if (!response.ok) {
@@ -30,7 +26,7 @@ function App() {
 
         const result = await response.json();
         setData(result.artObjects);
-        setFilteredData(result.artObjects);
+        setFilteredData(result.artObjects); // Par défaut, afficher toutes les données
       } catch (error) {
         console.error("Failed to fetch data:", error);
       } finally {
@@ -41,21 +37,45 @@ function App() {
     fetchData();
   }, []);
 
+ 
+  useEffect(() => {
+
+  }, [searchQuery]);
+
+  const fetchDataSearch = async (searchTerm) => {
+    try {
+      setIsLoading(true);
+      const query = searchTerm ? `&q=${searchTerm}` : '';
+      const apiUrl = '/.netlify/functions/get-collection';
+      const params = new URLSearchParams({ ps: 100 });
+      const response = await fetch(`${apiUrl}?${params.toString()}&${query}`);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
+      const result = await response.json();
+      setFilteredData(result.artObjects);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
+
   const handleSearchSubmit = (event) => {
     event.preventDefault();
+
     if (searchQuery) {
-      const searchResults = data.filter((item) =>
-        item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.principalOrFirstMaker?.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredData(searchResults);
+      fetchDataSearch(searchQuery);
     } else {
+
       setFilteredData(data);
     }
     setCurrentPage(1);

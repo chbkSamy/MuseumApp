@@ -25,6 +25,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    console.log("scroll to top");
   };
 
   return (

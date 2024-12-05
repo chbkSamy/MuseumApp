@@ -92,8 +92,42 @@
   font-size: 1.2rem;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Fond sombre semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Evite de faire défiler la page */
+}
 
+.popupContent {
+  position: relative;
+  width: 90%; /* Largeur de l'image dans la pop-up */
+  height: 90%; /* Hauteur de l'image dans la pop-up */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Fond transparent pour la pop-up */
+}
 
+.popupImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ajuste l'image sans la déformer */
+}
 
-
-
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2000;
+}
